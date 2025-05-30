@@ -12,10 +12,10 @@ function Book(title,author,pages,read) {
 function addBookToLibrary(title,author,pages,read) {
   // take params, create a book then store it in the array
   book = new Book(title,author,pages,read);
-  if(book.read === "on"){
+  if(book.read === true){
     book.read="yes";
   }
-  else{
+  else if(book.read===false){
     book.read="no";
   }
   myLibrary.push(book);
@@ -92,7 +92,7 @@ newbutton.addEventListener("click",()=>{
     readText.textContent = "Read (Yes/No)";
     let readRadio = document.createElement("INPUT");
     readRadio.setAttribute("type","checkbox");
-    readRadio.setAttribute("name","yes");
+    
     
     
     popup.appendChild(titleText);
@@ -115,7 +115,7 @@ newbutton.addEventListener("click",()=>{
     popup.appendChild(buffer);
     popup.appendChild(submitbutton);
     submitbutton.addEventListener("click",()=>{
-      addBookToLibrary(titleField.value,authorField.value,pagesField.value,readRadio.value);
+      addBookToLibrary(titleField.value,authorField.value,pagesField.value,readRadio.checked);
     
       popup.remove();
       const myNode = document.getElementById("container");
