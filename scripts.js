@@ -27,6 +27,8 @@ function showLibrary(){
     card.id="card";
     let buffer = document.createElement("div");
     let removeButton= document.createElement("button");
+    removeButton.innerHTML="<img src=x.png></img>";
+    removeButton.setAttribute("border-radius",("50%"))
     removeButton.addEventListener("click",()=>{
       myLibrary.splice(i,1);
       console.log(myLibrary);
@@ -63,7 +65,7 @@ function showLibrary(){
     let readLibrary = document.createElement("div");
     readLibrary.textContent=myLibrary[i].read;
     card.appendChild(readLibrary);
-
+    card.setAttribute("border","solid");
     body.appendChild(card);
   }
 }
@@ -125,6 +127,7 @@ newbutton.addEventListener("click",()=>{
       console.log(myLibrary);
       showLibrary();
     })
+    
     body.appendChild(popup);
 
 });
