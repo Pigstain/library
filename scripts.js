@@ -72,7 +72,10 @@ newbutton.addEventListener("click",()=>{
     
     let popup = document.createElement("div");
     popup.classList.add("popup");
-
+    const myNode = document.getElementById("container");
+      while (myNode.firstChild) {
+      myNode.removeChild(myNode.lastChild);
+      }
     let titleText= document.createElement("div");
     titleText.textContent="Title";
     let titleField= document.createElement("INPUT");
@@ -84,7 +87,7 @@ newbutton.addEventListener("click",()=>{
     let pagesText = document.createElement("div");
     pagesText.textContent="Pages";
     let pagesField = document.createElement("INPUT");
-    pagesField.setAttribute("type","text");
+    pagesField.setAttribute("type","number");
     let readText = document.createElement("div");
     readText.textContent = "Read (Yes/No)";
     let readRadio = document.createElement("INPUT");
